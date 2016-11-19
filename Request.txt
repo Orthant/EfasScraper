@@ -1,0 +1,189 @@
+Request:
+POST /EFAS/CaseSearch_GridData HTTP/1.1
+
+Host: 			dailylists.magistratesvic.com.au
+Connection: 		keep-alive
+Content-Length: 	166
+Pragma: 		no-cache
+Cache-Control: 		no-cache
+Accept: 		*/*
+Origin: 		https://dailylists.magistratesvic.com.au
+X-Requested-With: 	XMLHttpRequest
+User-Agent: 		Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+Content-Type: 		application/x-www-form-urlencoded; charset=UTF-8
+DNT: 			1
+Referer: 		https://dailylists.magistratesvic.com.au/EFAS/CaseSearch
+Accept-Encoding: 	gzip, deflate, br
+Accept-Language: 	en-AU,en;q=0.8
+Cookie: 		CaseSearchGrid=%7B%22page%22%3A1%2C%22pageSize%22%3A15%2C%22sort%22%3A%5B%5D%2C%22group%22%3A%5B%5D%2C%22CaseType%22%3A%22CRI%22%2C%22CourtID%22%3A%224%22%2C%22CourtID_input%22%3A%22Frankston%20Magistrates'%20Court%22%2C%22HearingDate%22%3A%22%22%2C%22CourtLinkCaseNo%22%3A%22%22%2C%22PlaintiffInformantApplicant%22%3A%22%22%2C%22DefendantAccusedRespondent%22%3A%22Macras%22%7D
+Form Data:		sort=&page=1&pageSize=150000&group=&filter=&CaseType=CRI&CourtID=4&HearingDate=&CourtLinkCaseNo=&PlaintiffInformantApplicant=&DefendantAccusedRespondent=&HearingType=
+
+Response Headers:
+
+HTTP/1.1 200 OK
+Cache-Control: 		private
+Content-Type: 		application/json; charset=utf-8
+Server: 		Microsoft-IIS/7.5
+X-AspNetMvc-Version: 	5.2
+X-AspNet-Version: 	4.0.30319
+X-Powered-By: 		ASP.NET
+Date: 			Sat, 19 Nov 2016 06:48:54 GMT
+Content-Length: 	1225932
+
+
+
+jQuery("#CaseGrid").kendoGrid({
+  "columns": [{
+    "title": "Case No",
+    "headerAttributes": {
+      "data-field": "CourtLinkCaseNo",
+      "data-title": "Case No"
+    },
+    "width": "150px",
+    "template": "\u003ca href=\u0027/EFAS/Case#=CaseType#?CaseID=#=CaseID#\u0027\u003e#=CourtLinkCaseNo#\u003c/a\u003e",
+    "field": "CourtLinkCaseNo",
+    "encoded": true
+  }, {
+    "title": "Plaintiff / Informant / Applicant",
+    "headerAttributes": {
+      "data-field": "PlaintiffInformantApplicant",
+      "data-title": "Plaintiff / Informant / Applicant"
+    },
+    "field": "PlaintiffInformantApplicant",
+    "encoded": true
+  }, {
+    "title": "Defendant / Accused / Respondent",
+    "headerAttributes": {
+      "data-field": "DefendantAccusedRespondent",
+      "data-title": "Defendant / Accused / Respondent"
+    },
+    "field": "DefendantAccusedRespondent",
+    "encoded": true
+  },
+  {
+    "title": "Hearing Type",
+    "headerAttributes": {
+      "data-field": "HearingType",
+      "data-title": "Hearing Type"
+    },
+    "field": "HearingType",
+    "encoded": true
+  },
+  {
+    "title": "Court",
+    "headerAttributes": {
+      "data-field": "Court",
+      "data-title": "Court"
+    },
+    "width": "250px",
+    "field": "Court",
+    "encoded": true
+  }, {
+    "title": "Hearing Date/Time",
+    "headerAttributes": {
+      "data-field": "HearingDateTime",
+      "data-title": "Hearing Date/Time"
+    },
+    "width": "170px",
+    "field": "HearingDateTime",
+    "format": "{0:dd/MM/yyyy hh:mm tt}",
+    "encoded": true
+  }, {
+    "title": "Informant Division",
+    "headerAttributes": {
+      "data-field": "InformantDivision",
+      "data-title": "Informant Division"
+    },
+    "width": "350px",
+    "field": "InformantDivision",
+    "encoded": true
+  }],
+  "pageable": {
+    "autoBind": false,
+    "pageSizes": [5, 10, 20],
+    "buttonCount": 10
+  },
+  "sortable": true,
+  "scrollable": false,
+  "messages": {
+    "noRecords": "No records available."
+  },
+  "autoBind": false,
+  "dataSource": {
+    "type": (function () {
+      if (kendo.data.transports['aspnetmvc-ajax']) {
+        return 'aspnetmvc-ajax';
+      } else {
+        throw new Error('The kendo.aspnetmvc.min.js script is not included.');
+      }
+    })(),
+    "transport": {
+      "read": {
+        "url": "/EFAS/CaseSearch_GridData",
+        "data": function () {
+          return {
+            CaseType: "CRI",
+            CourtID: 4,
+            HearingDate: "",
+            CourtLinkCaseNo: "",
+            PlaintiffInformantApplicant: "",
+            DefendantAccusedRespondent: "",
+            HearingType: ""
+          };
+        }
+      },
+      "prefix": ""
+    },
+    "pageSize": 150000,
+    "page": 1,
+    "total": 0,
+    "serverPaging": true,
+    "serverSorting": true,
+    "serverFiltering": true,
+    "serverGrouping": true,
+    "serverAggregates": true,
+    "sort": [{
+      "field": "CourtLinkCaseNo",
+      "dir": "desc"
+    }],
+    "filter": [],
+    "schema": {
+      "data": "Data",
+      "total": "Total",
+      "errors": "Errors",
+      "model": {
+        "id": "CourtLinkCaseNo",
+        "fields": {
+          "CaseID": {
+            "type": "number"
+          },
+          "CaseType": {
+            "type": "string"
+          },
+          "CourtLinkCaseNo": {
+            "type": "string"
+          },
+          "PlaintiffInformantApplicant": {
+            "type": "string"
+          },
+          "DefendantAccusedRespondent": {
+            "type": "string"
+          },
+          "Court": {
+            "type": "string"
+          },
+          "HearingDateTime": {
+            "type": "date",
+            "defaultValue": null
+          },
+          "InformantDivision": {
+            "type": "string"
+          },
+          "HearingType": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+});
