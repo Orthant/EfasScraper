@@ -5,22 +5,22 @@ Scrapes the daily lists of the Victorian Magistrates court and outputs a .json f
 So it becomes easy to prove that the Magistrates' court is indeed scum and that they are purposefully causing delays 
 in any hearing where a person pleads not guilty.
 
-Run the PowerShell script court.ps1 and you will get a nice CSV file showing the number of hearings and the types of hearings per day.
-***NOTE:*** This is currently hardcoded to the Frankston Court Criminal List, plans exist to extract the data of every single Court.
+Run the PowerShell script court.ps1 and you will get a nice CSV file showing the number of hearings and the types of hearings per day.  
+__NOTE:__ This is currently hardcoded to the Frankston Court Criminal List, plans exist to extract the data of every single Court.
 
 The goal is to build an analytics website showing the progression of matters through the Magistrates' Courts and to see if the Courts can live up to 
-their performance guidelines and prove which Courts are creating unneccessary delays.
-
-NO WE WILL NOT BE INCLUDING AS PART OF OUR ANALYTICS ANY NAMES OF THE PUBLIC.
-
-We will however be including names of the Police informants, so that we can give a ranking on which officers take the most matters to court.
-We will be collecting data such as how many of those cases progress to what stages, etc.
-It will be a comprehensive analytics platform, based solely off the EFAS data.
-
-If we could get access to a more reliable source, we would.
-
-We also don't care about civil matters at this stage.
-
+their performance guidelines and prove which Courts are creating unneccessary delays.  
+  
+NO WE WILL NOT BE INCLUDING AS PART OF OUR ANALYTICS ANY NAMES OF THE PUBLIC.  
+  
+We will however be including names of the Police informants, so that we can give a ranking on which officers take the most matters to court.  
+We will be collecting data such as how many of those cases progress to what stages, etc.  
+It will be a comprehensive analytics platform, based solely off the EFAS data.  
+  
+If we could get access to a more reliable source, we would.  
+  
+We also don't care about civil matters at this stage.  
+ 
 ## Does the Court know about this? ##
 Yes we wrote this to help an individual who had a matter before the Court who plead not guilty.
 He got endless amounts of 4 month delays, purposefully designed to put improper pressure on him to plead guilty for something he wasn't at 
@@ -41,7 +41,7 @@ Heaven help us, because the bullies have all the power and all we can do is slow
 
 ## Files
 
-*** Program.cs ***
+__Program.cs__
 The code for running in C# .NET using Parallel processing.
 THe Parallel processing may not work on Windows 8/8.1, due to an issue with
 multithreated Console.WriteLine() calls.  
@@ -50,12 +50,12 @@ For this you are out of luck, because I don't see a reason to accomodate you.
 
 This will take about 2 minutes to run.
 
-***NOTE:*** Running this will open thousands of connections that are only open for
+__NOTE:__ Running this will open thousands of connections that are only open for
 under a second or so. If you get the Police come to your door accussing you of trying
 to hack or whatever the court's daily lists, that's your fault not mine.
 
 
-*** court.ps1 ***
+__court.ps1__  
 PowerShell script, this will go through sequentially, not parallel and thus is a bit safer to run.
 Although it will take a lot longer, around 20-30 mins? I haven't timed it to know.
 
