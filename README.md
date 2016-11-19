@@ -11,7 +11,7 @@ __NOTE:__ This is currently hardcoded to the Frankston Court Criminal List, plan
 The goal is to build an analytics website showing the progression of matters through the Magistrates' Courts and to see if the Courts can live up to 
 their performance guidelines and prove which Courts are creating unneccessary delays.  
   
-NO WE WILL NOT BE INCLUDING AS PART OF OUR ANALYTICS ANY NAMES OF THE PUBLIC.  
+# NO WE WILL NOT BE INCLUDING AS PART OF OUR ANALYTICS ANY NAMES OF THE PUBLIC.  #
   
 We will however be including names of the Police informants, so that we can give a ranking on which officers take the most matters to court.  
 We will be collecting data such as how many of those cases progress to what stages, etc.  
