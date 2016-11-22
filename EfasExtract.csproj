@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EfasSearch.cs" />
+    <Compile Include="Hearing.cs" />
+    <Compile Include="ICaseSearcher.cs" />
+    <Compile Include="ICaseSearchResponse.cs" />
+    <Compile Include="IHearing.cs" />
+    <Compile Include="Magistrates\Court.cs" />
+    <Compile Include="Magistrates\EfasCaseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +60,10 @@
     <None Include="LICENSE" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request.txt" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

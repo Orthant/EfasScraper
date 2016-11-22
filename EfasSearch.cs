@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Net;
 
-public class EfasSearch
+namespace EfasExtract
 {
+    public sealed class MagistratesCourtCaseSearcher : ICaseSearcher
+    {
+        public MagistratesCourtCaseSearcher()
+        {
 
+        }
 
-	public EfasSearch()
-	{
-	}
+        
+    }
 }
